@@ -1,0 +1,31 @@
+create database unity;
+use unity;
+create table level(
+deviceUniqueIdentificator varchar (32) primary key not null,
+level int
+);
+create table personaje(
+deviceUniqueIdentificator varchar (32) primary key not null,
+healthBonus int,
+manaBonus int,
+coinResistance float,
+runnngSpeedBonus float,
+jumpForceBonus float,
+superJumpCost int,
+candyStikCure int,
+skillsDiscount int
+);
+create table skills(
+deviceUniqueIdentificator varchar (32) primary key not null,
+healthBonusCost int,
+manaBonusCost int,
+coinResistanceCost int,
+runnngSpeedBonusCost int,
+jumpForceBonusCost int,
+superJumpCostsCost int,
+candyStikCureCost int,
+skillsDiscountCost int
+);
+
+create user 'juego' identified by 'unity';
+grant all privileges on *.* to juego with grant option;
